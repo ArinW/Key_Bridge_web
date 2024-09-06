@@ -4,43 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Key Bridge Web</title>
+    <title>Interactive Map - Key Bridge Web (Baltimore)</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            margin: 0;
-            padding: 10px;
-            background-color: #333;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
+        #map {
+            height: 500px; /* Adjust height as necessary */
             width: 100%;
         }
     </style>
@@ -48,32 +15,36 @@
 <body>
 
 <header>
-    <h1>Welcome to Key Bridge Web</h1>
+    <h1>Interactive Map - Key Bridge Web (Baltimore)</h1>
 </header>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</nav>
-
 <main>
-    <h2>About Key Bridge Web</h2>
-    <p>Key Bridge Web is your bridge to innovative web solutions, providing a seamless connection between creativity and technology.</p>
-
-    <h2>Our Services</h2>
-    <ul>
-        <li>Web Development</li>
-        <li>Web Design</li>
-        <li>SEO Optimization</li>
-        <li>Custom Solutions</li>
-    </ul>
+    <div id="map"></div>
 </main>
 
-<footer>
-    <p>&copy; 2024 Key Bridge Web. All rights reserved.</p>
-</footer>
+<!-- Google Maps API Script -->
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+
+<script>
+    function initMap() {
+        // Map options
+        const options = {
+            zoom: 12,
+            center: { lat: 39.2904, lng: -76.6122 } // Baltimore coordinates
+        };
+
+        // Create map
+        const map = new google.maps.Map(document.getElementById('map'), options);
+
+        // Add marker for Baltimore
+        const marker = new google.maps.Marker({
+            position: { lat: 39.2904, lng: -76.6122 },
+            map: map
+        });
+    }
+</script>
 
 </body>
 </html>
