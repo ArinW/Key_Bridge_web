@@ -20,6 +20,7 @@
             color: white;
             padding: 120px 20px;
             text-align: center;
+            z-index: 1; /* Ensure the header is visible */
         }
         
         /* Overlay effect for the background */
@@ -30,8 +31,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark overlay */
             z-index: 1;
+        }
+        
+        /* Ensure the text is above the overlay */
+        header h1, header p, .button {
+            position: relative;
+            z-index: 2; /* Make sure the content is above the overlay */
         }
 
         header h1 {
@@ -84,7 +91,7 @@
             border-radius: 10px; 
             width: 90%; 
             max-width: 1200px; 
-            min-height: 500px; 
+            min-height: 400px; 
         }
 
 
