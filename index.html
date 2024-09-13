@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #f4f4f4;
         }
 
         header {
@@ -18,8 +18,20 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 20px;
+            padding: 120px 20px;
             text-align: center;
+        }
+        
+        /* Overlay effect for the background */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+            z-index: 1;
         }
 
         header h1 {
@@ -66,12 +78,15 @@
 
         .plot {
             margin: 20px auto;
-            padding: 10px;
+            padding: 20px; 
             background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            width: 300px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+            border-radius: 10px; 
+            width: 90%; 
+            max-width: 1200px; 
+            min-height: 500px; 
         }
+
 
         .plot img {
             max-width: 100%;
@@ -96,7 +111,7 @@
 <header>
     <h1>Visualizing Data</h1>
     <p>Explore the collection of histograms generated from various datasets.</p>
-    <a href="#plots" class="button">View Histograms</a>
+    <a href="#plots" class="button">A button </button></button></a>
 </header>
 
 <main id="plots">
@@ -105,15 +120,15 @@
         <!-- Example plot - You can replicate this for each of your images -->
         <div class="plot">
             <img src="Plots/Top 10 Bridges with Daily Trip Averages Above 1 Ships:Day (All Large Ships).png" alt="Histogram 1">
-            <p>Histogram Title 1</p>
+            <p>Top 10 Bridges with Daily Trip Averages Above 1 Ships:Day (All Large Ships)</p>
         </div>
         <div class="plot">
             <img src="Plots/Top 25 Bridges with Daily Trip Averages Above 1 Ships:Day (All Large Ships).png" alt="Histogram 2">
-            <p>Histogram Title 2</p>
+            <p>Top 25 Bridges with Daily Trip Averages Above 1 Ships:Day (All Large Ships)</p>
         </div>
         <div class="plot">
             <img src="Plots/Top 50 Bridges with Daily Trip Averages Above 1 Ships:Day (All Large Ships).png" alt="Histogram 3">
-            <p>Histogram Title 3</p>
+            <p>Top 50 Bridges with Daily Trip Averages Above 1 Ships:Day (All Large Ships)</p>
         </div>
         <!-- Add more histogram plots as necessary -->
     </div>
